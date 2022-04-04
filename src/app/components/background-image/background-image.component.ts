@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./background-image.component.css']
 })
 export class BackgroundImageComponent implements OnInit {
-  weather:string = '../../../assets/imgs/calido.png';
+  bgWeather:string = '../../../assets/imgs/calido.png';
 
   constructor() { }
 

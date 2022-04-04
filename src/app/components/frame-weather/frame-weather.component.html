@@ -1,9 +1,9 @@
 <div class="container" [ngStyle]="{'background-color':'#E67E22'}">
     <h1>Weather App</h1>
     <app-form-button></app-form-button>
-    <div>
-        <p>{{weather.main.temp}}</p>
-        <h2></h2>
+    <div class="temperature">
+            <p>{{weather.main.temp}}&#176;<span>C</span></p>
+            <h2 *ngIf="weather.name">{{weather.name}}, {{weather.sys.country}}</h2>
     </div>
 
 </div>
