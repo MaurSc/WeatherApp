@@ -1,13 +1,12 @@
 
 .form-container{
     position: relative;
-    margin-top:15px;
     padding:5px;
     display: flex;
     justify-content: flex-end;
 }
 .form-container input{
-    width:0px;
+    width:280px;
     height: 40px;
     padding:0 20px;
     font-size: 18px;
@@ -15,7 +14,6 @@
     outline: none;
     border: 1px  solid silver;
     border-radius: 30px;
-    transition: all 1s ease;
 }
 .btn{
     position: absolute;
@@ -30,10 +28,4 @@
     font-size: 20px;
     border-radius:50%;
     cursor: pointer;
-}
-.form-container:hover input{
-    width:240px;
-}
-.form-container input:focus{
-    width:240px;
 }

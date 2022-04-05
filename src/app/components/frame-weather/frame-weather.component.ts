@@ -36,6 +36,8 @@ export class FrameWeatherComponent implements OnInit{
     this.weatherApiService.getWeatherLocationn(lat,lng).subscribe(res => {
       this.weather = res;
       this.weather.main.temp = Math.floor(this.weather.main.temp - 273.15);
+      this.weather.main.temp_min = Math.floor(this.weather.main.temp_min - 273.15);
+      this.weather.main.temp_max = Math.floor(this.weather.main.temp_max - 273.15);
     });
   }
 

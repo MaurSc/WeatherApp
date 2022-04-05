@@ -1,0 +1,43 @@
+
+    <div class="details">
+        <div class="minmax">
+            <p>{{tempMin}}&#176;<span>C</span>-Min / {{tempMax}}&#176;<span>C</span>-Max</p>
+        </div>
+        <div class="detail">
+           
+            <fa-icon
+            [icon]="faWind"
+            class="icon"
+            >
+            </fa-icon>
+            <p>{{wind}} m/s</p>
+            <span class="info">wind speed</span>
+        </div>
+        <div class="detail">
+            <fa-icon
+            [icon]="faCloud"
+            class="icon"
+            >
+            </fa-icon>
+            <p>{{cloud}}%</p>
+            <span class="info">Cloudiness</span>
+        </div>
+        <div class="detail">
+            <fa-icon
+            [icon]="faGaugeHigh"
+            class="icon"
+            >
+            </fa-icon>
+            <p>{{pressure}}hPa</p>
+            <span class="info">Pressure in hPa</span>
+        </div>
+        <div class="detail">
+            <fa-icon
+            [icon]="faDroplet"
+            class="icon"
+            >
+            </fa-icon>
+            <p>{{humidity}}%</p>
+            <span class="info">Humidity percent</span>
+        </div>
+    </div>
