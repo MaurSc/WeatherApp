@@ -1,3 +1,3 @@
-<div class="bg-image" [ngStyle]="{'background-image': 'url(' + bgWeather + ')'}" >
+<div [@bgImage]="bgImage" class="bg-image" [ngStyle]="{'background-image': 'url(' +bgWeather+ ')'}" >
     <app-frame-weather (weatherTemp)="getTemp($event)"></app-frame-weather>
 </div>
