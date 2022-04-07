@@ -1,4 +1,14 @@
-<div class="form-container">
-    <input type="text" placeholder="City" required/>
-    <fa-icon class="icon btn" [icon]="faMagnifyingGlass"></fa-icon>
-</div>
+<form 
+    class="form-container"
+    (ngSubmit)="onSubmit()"
+>
+    <input
+        autofocus
+        autocomplete="off"
+        type="text" 
+        placeholder="City"
+        name="city"
+        [(ngModel)]="city"
+    />
+    <input class="btn" type="submit" value="🔎"/>
+</form>

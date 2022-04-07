@@ -16,5 +16,10 @@ export class WeatherApiService {
     return this.http.get<Weather>('https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lng+'&appid='+this.keyApi)
     .pipe(map(res => res));
   }
+
+  getWeathercity(city:string): Observable <Weather>{
+    return this.http.get<Weather>('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid='+this.keyApi)
+    .pipe(map(res =>res));
+  }
 }
 

@@ -19,7 +19,6 @@ export class FrameContentComponent implements OnInit {
   faCloud = faCloud;
   faDroplet = faDroplet;
   faGaugeHigh = faGaugeHigh;
-  grade:string = ' &#176;';
   constructor() { }
 
   ngOnInit(): void {

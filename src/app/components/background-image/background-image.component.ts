@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BackgroundImageComponent implements OnInit {
   bgWeather:string = '../../../assets/imgs/calido.png';
-
+  weatherTemp:number=0;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  getTemp(temp:number){
+    this.weatherTemp = temp;
+  }
 }
