@@ -14,7 +14,7 @@ import { WEATHER_INIT } from 'src/app/models/weatherInit';
     trigger('bgImage',[
       state('cold',style({ opacity:1})),
       state('warm',style({ opacity:1})),
-      transition('cold <=> warm',[
+      transition('* <=> *',[
         style({ 
           opacity:0
         }),
@@ -56,8 +56,6 @@ export class BackgroundImageComponent implements OnInit {
     this.weatherApiService.getWeatherLocationn(lat,lng).subscribe((res: any) => {
       this.weather = res;
       this.weather.main.temp = Math.floor(this.weather.main.temp - 273.15);
-      this.weather.main.temp_min = Math.floor(this.weather.main.temp_min - 273.15);
-      this.weather.main.temp_max = Math.floor(this.weather.main.temp_max - 273.15);
       this.getTemp(this.weather.main.temp)
     });
     

@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="{'background-color':'#E67E22'}">
+<div class="container" >
     <app-form-button (changeC)="getWeathercity($event)"></app-form-button>
     <h2 *ngIf="weather.name">{{weather.name}}, {{weather.sys.country}}</h2>
     <div class="temperature">

@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
     trigger('loading',[
       state('true',style({ opacity:1})),
       state('false',style({ opacity:0})),
-      transition('true => false',[
+      transition('* => *',[
         style({ 
           opacity:0
         }),
@@ -21,7 +21,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PreloaderComponent implements OnInit {
 @Input() loading:boolean=true;
 isLoading:string = 'true';
-  constructor() { }
 
   ngOnInit(): void {
     

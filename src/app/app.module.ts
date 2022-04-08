@@ -12,6 +12,7 @@ import { FrameWeatherComponent } from './components/frame-weather/frame-weather.
 import { FormButtonComponent } from './components/form-button/form-button.component';
 import { FrameContentComponent } from './components/frame-content/frame-content.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { CelciusPipe } from './pipes/toCelcius.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PreloaderComponent } from './components/preloader/preloader.component';
     FrameWeatherComponent,
     FormButtonComponent,
     FrameContentComponent,
-    PreloaderComponent
+    PreloaderComponent,
+    CelciusPipe
   ],
   imports: [
     BrowserModule,

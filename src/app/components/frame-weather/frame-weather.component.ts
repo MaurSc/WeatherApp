@@ -12,7 +12,6 @@ import {WEATHER_INIT} from '../../models/weatherInit';
 export class FrameWeatherComponent implements OnInit{
   @Output() weatherTemp= new EventEmitter();
   @Input() weather:Weather = WEATHER_INIT;
-
   constructor( private weatherApiService : WeatherApiService){}
   ngOnInit() {
     this.weatherTemp.emit(this.weather.main.temp);
@@ -22,9 +21,8 @@ export class FrameWeatherComponent implements OnInit{
     this.weatherApiService.getWeathercity(city).subscribe(res =>{
       this.weather = res;
       this.weather.main.temp = Math.floor(this.weather.main.temp - 273.15);
-      this.weather.main.temp_min = Math.floor(this.weather.main.temp_min - 273.15);
-      this.weather.main.temp_max = Math.floor(this.weather.main.temp_max - 273.15);
       this.weatherTemp.emit(this.weather.main.temp);
+      
     });
     
   }
