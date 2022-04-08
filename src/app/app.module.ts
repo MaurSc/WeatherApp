@@ -11,6 +11,7 @@ import { BackgroundImageComponent } from './components/background-image/backgrou
 import { FrameWeatherComponent } from './components/frame-weather/frame-weather.component';
 import { FormButtonComponent } from './components/form-button/form-button.component';
 import { FrameContentComponent } from './components/frame-content/frame-content.component';
+import { PreloaderComponent } from './components/preloader/preloader.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FrameContentComponent } from './components/frame-content/frame-content.
     BackgroundImageComponent,
     FrameWeatherComponent,
     FormButtonComponent,
-    FrameContentComponent
+    FrameContentComponent,
+    PreloaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
 <div [@bgImage]="bgImage" class="bg-image" [ngStyle]="{'background-image': 'url(' +bgWeather+ ')'}" >
-    <app-frame-weather (weatherTemp)="getTemp($event)"></app-frame-weather>
+    <app-preloader *ngIf="loading" [loading]="loading" ></app-preloader>
+    <app-frame-weather *ngIf="!loading" (weatherTemp)="getTemp($event)"  [weather]="weather"></app-frame-weather>
 </div>

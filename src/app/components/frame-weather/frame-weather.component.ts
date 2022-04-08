@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 
 import{ WeatherApiService } from '../../services/weather-api.service';
@@ -11,41 +11,13 @@ import {WEATHER_INIT} from '../../models/weatherInit';
 })
 export class FrameWeatherComponent implements OnInit{
   @Output() weatherTemp= new EventEmitter();
-  lat:number = -34.609654;
-  lng:number = -58.390187;
-
-  weather:Weather = WEATHER_INIT;
+  @Input() weather:Weather = WEATHER_INIT;
 
   constructor( private weatherApiService : WeatherApiService){}
   ngOnInit() {
-    this.getUserLocation();
+    this.weatherTemp.emit(this.weather.main.temp);
   }
 
-  getUserLocation() {
-    // get Users current position
-    navigator.geolocation.getCurrentPosition(position=>{
-      this.lat = position.coords.latitude;
-      this.lng = position.coords.longitude;
-      this.getWeatherLocationn(this.lat,this.lng);
-      this.weatherTemp.emit(this.weather.main.temp);
-    },() =>{
-      this.getWeatherLocationn(this.lat,this.lng)
-      alert('check you are allowed to bind your location with our app')
-      this.weatherTemp.emit(this.weather.main.temp);
-    })
-    
-  }
-
-  getWeatherLocationn(lat:number,lng:number){
-    this.weatherApiService.getWeatherLocationn(lat,lng).subscribe(res => {
-      this.weather = res;
-      this.weather.main.temp = Math.floor(this.weather.main.temp - 273.15);
-      this.weather.main.temp_min = Math.floor(this.weather.main.temp_min - 273.15);
-      this.weather.main.temp_max = Math.floor(this.weather.main.temp_max - 273.15);
-      this.weatherTemp.emit(this.weather.main.temp);
-    });
-    
-  }
   getWeathercity(city:string) {
     this.weatherApiService.getWeathercity(city).subscribe(res =>{
       this.weather = res;
