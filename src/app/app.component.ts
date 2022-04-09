@@ -9,15 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'Weather-App';
-  isLoad = 'false';
-  load:boolean = false;
-  notLoad:boolean = true;
 
   ngOnInit(){
-    setTimeout(() =>{
-      this.load=!this.load;
-      this.notLoad=!this.notLoad;
-    },4000)
   }
     
 

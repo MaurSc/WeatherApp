@@ -1,3 +1,7 @@
+
+.blur {
+    backdrop-filter: blur(10px);  
+}
 .temperature{
     display: flex;
     justify-content: space-between;
