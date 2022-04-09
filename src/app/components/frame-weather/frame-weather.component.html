@@ -1,17 +1,22 @@
 <div class="container" >
     <app-form-button (changeC)="getWeathercity($event)"></app-form-button>
-    <h2 *ngIf="weather.name">{{weather.name}}, {{weather.sys.country}}</h2>
-    <div class="temperature">
+    <h2 class="city" *ngIf="weather.name">{{weather.name}}, {{weather.sys.country}}</h2>
+    <div class="division">
+        <div class="temperature">
             <p>{{weather.main.temp}}&#176;<span>C</span></p>
+        </div>
+        <div>
+            <app-frame-content 
+                [tempMin]="weather.main.temp_min"
+                [tempMax]="weather.main.temp_max"
+                [wind]="weather.wind.speed"
+                [cloud]="weather.clouds.all"
+                [pressure]="weather.main.pressure"
+                [humidity]="weather.main.humidity"
+            >
+            </app-frame-content>
+        </div>
     </div>
-    <app-frame-content 
-        [tempMin]="weather.main.temp_min"
-        [tempMax]="weather.main.temp_max"
-        [wind]="weather.wind.speed"
-        [cloud]="weather.clouds.all"
-        [pressure]="weather.main.pressure"
-        [humidity]="weather.main.humidity"
-    >
-    </app-frame-content>
+    <app-footer></app-footer>
 </div>
 
